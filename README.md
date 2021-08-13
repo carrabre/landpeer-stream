@@ -34,7 +34,7 @@ $ npm run dev
 The last line you should see is something along the lines of:
 
 ```
-$ > ready on port 3000
+$ > ready on port 3001
 ```
 
 Visit that page in the browser and you should see Wocket!

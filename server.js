@@ -5,7 +5,7 @@ const WebSocketServer = require('ws').Server;
 const child_process = require('child_process');
 const url = require('url');
 
-const port = parseInt(process.env.PORT, 10) || 3000;
+const port = parseInt(process.env.PORT, 10) || 3001;
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
@@ -33,7 +33,7 @@ app.prepare().then(() => {
     const params = new URLSearchParams(queryString);
     const key = params.get('key');
 
-    const rtmpUrl = `rtmps://global-live.mux.com/app/${key}`;
+    const rtmpUrl = `rtmp://rtmp.livepeer.com/live/${key}`;
 
     const ffmpeg = child_process.spawn('ffmpeg', [
       '-i','-',

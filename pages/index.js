@@ -5,14 +5,14 @@ import styles from '../styles/demo.module.css';
 const CAMERA_CONSTRAINTS = {
   audio: true,
   video: true,
-};
+}; 
 
 export default () => {
   const [connected, setConnected] = useState(false);
   const [cameraEnabled, setCameraEnabled] = useState(false);
   const [streaming, setStreaming] = useState(false);
   const [streamKey, setStreamKey] = useState(null);
-  const [textOverlay, setTextOverlay] = useState('Live from the browser!');
+  const [textOverlay, setTextOverlay] = useState('Live from the Metaverse!');
 
   const inputStreamRef = useRef();
   const videoRef = useRef();
@@ -26,7 +26,6 @@ export default () => {
     inputStreamRef.current = await navigator.mediaDevices.getUserMedia(
       CAMERA_CONSTRAINTS
     );
-
     videoRef.current.srcObject = inputStreamRef.current;
 
     await videoRef.current.play();
@@ -129,22 +128,17 @@ export default () => {
       cancelAnimationFrame(requestAnimationRef.current);
     };
   }, []);
-
+// 6B47C1
   return (
     <div className={styles.container}>
       <Head>
-        <title>Wocket</title>
+        <title>LandPeer</title>
       </Head>
 
       <div className={styles.info}>
-        <h1>Wocket</h1>
+        <h1>LandPeer</h1>
         <p>
-          A demo using modern web technologies to broadcast video from a browser
-          to a server via WebSockets. To learn more, see the <a href="https://github.com/MuxLabs/wocket">Github repo</a> or check out the <a href="https://mux.com/blog/the-state-of-going-live-from-a-browser/">Mux blog post</a> on the topic.
-        </p>
-
-        <p>
-          This service is provided "as is," with no uptime guarantees, support, or any of the usual stuff people pay for.
+        Live streams from the Metaverse
         </p>
 
         {cameraEnabled &&
@@ -168,7 +162,7 @@ export default () => {
           ) : (
             <>
               <input
-                placeholder="Mux Stream Key"
+                placeholder="Livepeer Stream Key"
                 type="text"
                 onChange={(e) => setStreamKey(e.target.value)}
               />

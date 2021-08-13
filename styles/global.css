@@ -43,8 +43,8 @@ button {
   background-color: transparent;
   background-image: linear-gradient(
     to right,
-    rgb(255, 61, 48),
-    rgb(255, 43, 97)
+    rgb(107,71,193),
+    rgb(107,71,225)
   );
   padding: 14px 10px;
   text-decoration: none;
